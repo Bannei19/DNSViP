@@ -1,22 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cài đặt DNS ViP</title>
+    <title>Cài Đặt DNS ViP • Bảo Mật & Nhanh Hơn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+        
+        .spinner {
+            animation: spin 1.5s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
 </head>
-<body style="text-align: center; font-family: sans-serif; margin-top: 50px;">
+<body class="gradient-bg min-h-screen flex items-center justify-center text-white p-6">
+    <div class="max-w-md w-full">
+        <!-- Header -->
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center text-3xl shadow-xl shadow-blue-500/50">
+                ⚡
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold tracking-tighter">DNS ViP</h1>
+                <p class="text-blue-400 text-sm font-medium -mt-1">Bảo mật • Tốc độ • Riêng tư</p>
+            </div>
+        </div>
 
-    <h2>Đang tự động tải cấu hình...</h2>
-    <p>Vui lòng chọn <b>"Cho phép" (Allow)</b> khi được hỏi.</p>
-    
-    <p>Nếu máy không tự tải, <a href="https://github.com/Bannei19/DNSViP/raw/refs/heads/main/DNSViP.mobileconfig" style="color: blue;">nhấn vào đây</a>.</p>
+        <div class="glass rounded-3xl p-8 shadow-2xl border border-white/10">
+            <!-- Status -->
+            <div class="flex flex-col items-center text-center mb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-circle-check text-emerald-400 text-2xl"></i>
+                    <span class="text-emerald-400 font-semibold">Đang chuẩn bị cấu hình...</span>
+                </div>
+                
+                <!-- Loading animation -->
+                <div class="flex justify-center mb-6">
+                    <div class="relative w-20 h-20">
+                        <div class="absolute inset-0 border-4 border-blue-500/30 rounded-2xl"></div>
+                        <div class="spinner absolute inset-0 border-4 border-transparent border-t-blue-500 rounded-2xl"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-4xl pulse">🔒</div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-semibold mb-2">Tự động tải DNS ViP</h2>
+                <p class="text-slate-300 text-lg">
+                    Vui lòng nhấn <span class="font-bold text-white">"Cho phép"</span> khi iOS hỏi
+                </p>
+                <p class="text-sm text-slate-400 mt-1">Cấu hình sẽ được cài tự động sau 2 giây</p>
+            </div>
+
+            <!-- Manual button -->
+            <a href="https://github.com/Bannei19/DNSViP/raw/refs/heads/main/DNSViP.mobileconfig"
+               class="block w-full bg-blue-600 hover:bg-blue-500 transition-all text-white font-semibold py-4 px-6 rounded-2xl text-center text-lg flex items-center justify-center gap-3 shadow-lg shadow-blue-500/30 active:scale-95">
+                <i class="fa-solid fa-download"></i>
+                TẢI NGAY DNSViP.mobileconfig
+            </a>
+
+            <p class="text-center text-xs text-slate-400 mt-6">
+                Nếu không tự động tải, hãy nhấn vào nút trên
+            </p>
+
+            <!-- Benefits -->
+            <div class="mt-10 grid grid-cols-3 gap-4 text-center text-xs">
+                <div class="glass rounded-2xl p-3">
+                    <i class="fa-solid fa-shield-halved text-emerald-400 mb-1"></i>
+                    <p class="font-medium">Chặn quảng cáo</p>
+                </div>
+                <div class="glass rounded-2xl p-3">
+                    <i class="fa-solid fa-bolt text-yellow-400 mb-1"></i>
+                    <p class="font-medium">Tăng tốc mạng</p>
+                </div>
+                <div class="glass rounded-2xl p-3">
+                    <i class="fa-solid fa-lock text-blue-400 mb-1"></i>
+                    <p class="font-medium">Bảo vệ riêng tư</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer info -->
+        <div class="text-center mt-8 text-xs text-slate-400 flex flex-col items-center gap-1">
+            <p>Được thiết kế bởi cộng đồng ViP • 2026</p>
+            <a href="https://github.com/Bannei19/DNSViP" target="_blank" 
+               class="flex items-center gap-1 hover:text-blue-400 transition-colors">
+                <i class="fa-brands fa-github"></i>
+                <span>Xem mã nguồn</span>
+            </a>
+        </div>
+    </div>
 
     <script>
-        setTimeout(function() {
-            window.location.href = "https://github.com/Bannei19/DNSViP/raw/refs/heads/main/DNSViP.mobileconfig";
-        }, 1500);
-    </script>
+        // Tự động tải sau 2 giây (có thể điều chỉnh)
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = "https://github.com/Bannei19/DNSViP/raw/refs/heads/main/DNSViP.mobileconfig";
+            link.download = "DNSViP.mobileconfig";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Hiển thị thông báo thành công sau khi click
+            setTimeout(() => {
+                const success = document.createElement('div');
+                success.innerHTML = `
+                    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-6 py-3 rounded-3xl shadow-2xl flex items-center gap-2 text-sm font-medium">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Đã bắt đầu tải cấu hình!</span>
+                    </div>`;
+                document.body.appendChild(success);
+                
+                setTimeout(() => success.remove(), 4000);
+            }, 300);
+        }, 1800);
 
+        // Tailwind script đã được load
+        function initTailwind() {
+            // Không cần config thêm vì dùng class trực tiếp
+        }
+        window.onload = initTailwind;
+    </script>
 </body>
 </html>
